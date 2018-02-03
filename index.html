@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quinielApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=devie-width, initial-sclae=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>Quiniela: The game for a Jersey</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="loginController">
+  <div class="col-xs-12">
+    <form ng-hide="signUp == true">
+     <div class="container col-xs-12 col-sm-6 col-sm-push-3">
+       <h2>Quiniela!</h2>
+       <label><b>Username</b></label>
+       <input type="text" placeholder="Username" name="uname" ng-model="uname">
+
+       <label><b>Password</b></label>
+       <input type="password" placeholder="Password" name="psw" ng-model="pwd">
+       <button type="submit" class="loginbtn" ng-click="loginFtn(uname, pwd);">Login</button>
+       <button type="submit" class="signupbtn" ng-click="showSignUp();">Crea un usuario</button>
+       <div class="alert alert-danger alert-dismissible" role="alert" ng-if="loginError">
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+         </button>
+         <strong>Error:</strong> the user or password is incorrect.
+       </div>
+     </div>
+    </form>
+  </div>
+  <div class="col-xs-12">
+    <form ng-show="signUp == true">
+     <div class="container col-xs-12 col-sm-6 col-sm-push-3">
+       <h2>Ingresa tus datos.</h2>
+       <label><b>Nombre:</b></label>
+       <input type="text" placeholder="Name" name="name" ng-model="name" required>
+
+       <label><b>Apellido:</b></label>
+       <input type="text" placeholder="Lastname" name="lastname" ng-model="lastname" required>
+       <label><b>Usuario:</b></label>
+       <input type="text" placeholder="Username" name="username" ng-model="username" required>
+       <label><b>Password:</b></label>
+       <input type="password" placeholder="Password" name="password" ng-model="password" required>
+       <button type="submit" class="signupbtn" ng-click="signUpFtn();">Enviar</button>
+     </div>
+    </form>
+  </div>
+  <script src="./angular/angular.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers.js"></script>
+  <script src="scripts/services.js"></script>
+</body>
+</html>

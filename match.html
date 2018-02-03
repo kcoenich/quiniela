@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quinielApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=devie-width, initial-sclae=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>Quiniela: The game for a Jersey</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="matchController">
+  <form>
+   <div class="container col-xs-12 col-sm-6 col-sm-push-3">
+     <h2>Ingresa tu partido!</h2>
+     <label><b>Torneo: </b></label>
+     <input type="text" placeholder="Ej: Uefa Champions League" name="uname" ng-model="tournament" required>
+
+     <label><b>Estadio: </b></label>
+     <input type="text" placeholder="Ej: Estadio Doroteo Wamuch Flores" name="stadium" ng-model="stadium" required>
+     
+     <label><b>Fecha y hora: </b></label>
+     <input type="datetime" name="date" ng-model="date" required>
+
+     <label><b>Local: </b></label>
+     <label><b>vs</b></label>
+     <label><b>Visita: </b></label>
+     <input type="checkbox" name="vuelta" value="true"> Es partido de vuelta?<br>
+     <button type="submit" class="loginbtn" ng-click="loginFtn(uname, pwd);">Login</button>
+     <div class="alert alert-danger alert-dismissible" role="alert" ng-if="loginError">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+       </button>
+       <strong>Error:</strong> the user or password is incorrect.
+     </div>
+   </div>
+  </form>
+
+  <script src="./angular/angular.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers.js"></script>
+  <script src="scripts/services.js"></script>
+</body>
+</html>
